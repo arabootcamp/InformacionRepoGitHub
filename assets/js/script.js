@@ -50,12 +50,11 @@ let eventForm = (event) => {
       resolve(getRepo(dataForm.user, dataForm.numPage, dataForm.numRepos));
     })
   ]).then((data) => {
-    if (data[0].message == 'Not Found'){
-      alert("El usuario no existe.")
+    if (data[0].message == 'Not Found') {
       result01.innerHTML = '';
-      result02.innerHTML = ''; 
-    }
-    else {
+      result02.innerHTML = '';
+      alert("El usuario no existe.")
+    } else {
       result01.innerHTML = `
       <h4 class="mb-3">Datos Usuario</h4>
       <img class="mb-3" src="${data[0].avatar_url}" alt="avatar">
@@ -64,13 +63,13 @@ let eventForm = (event) => {
       <p class="py-0 my-0"><strong>Cantidad de repositorios:</strong> ${data[0].public_repos}</p>
       <p class="py-0 my-0"><strong>Localidad:</strong> ${data[0].location}</p>
       <p class="py-0 my-0"><strong>Tipo de usuario:</strong> ${data[0].type}</p>`;
-console.log(data[1])
-     let text='';
-     text=`<h4 class="mb-3">Nombre de repositorios</h4>`;
+      console.log(data[1])
+      let text = '';
+      text = `<h4 class="mb-3">Nombre de repositorios</h4>`;
       for (let obj of data[1]) {
-        text+=`<a class="d-block text-decoration-none" href="${obj['clone_url']}">${obj['name']}</a>`; 
+        text += `<a class="d-block text-decoration-none" href="${obj['clone_url']}">${obj['name']}</a>`;
       }
-      result02.innerHTML=text;
+      result02.innerHTML = text;
     }
   })
 }
