@@ -55,7 +55,7 @@ let eventForm = (event) => {
     else {
       result01.innerHTML = `
       <h4 class="mb-3">Datos Usuario</h4>
-      <img src="${data[0].avatar_url}" alt="avatar">
+      <img class="mb-3" src="${data[0].avatar_url}" alt="avatar">
       <p class="py-0 my-0"><strong>Nombre de usuario:</strong> ${data[0].name}</p>
       <p class="py-0 my-0"><strong>Nombre de login:</strong> ${data[0].login}</p>
       <p class="py-0 my-0"><strong>Cantidad de repositorios:</strong> ${data[0].public_repos}</p>
