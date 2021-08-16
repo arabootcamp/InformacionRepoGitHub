@@ -50,8 +50,11 @@ let eventForm = (event) => {
       resolve(getRepo(dataForm.user, dataForm.numPage, dataForm.numRepos));
     })
   ]).then((data) => {
-    if (data[0].message == 'Not Found')
+    if (data[0].message == 'Not Found'){
       alert("El usuario no existe.")
+      result01.innerHTML = '';
+      result02.innerHTML = ''; 
+    }
     else {
       result01.innerHTML = `
       <h4 class="mb-3">Datos Usuario</h4>
